@@ -9,6 +9,9 @@ jobs:
       issues: write
     runs-on: ubuntu-latest
     steps:
+      - name: Print the token
+        run: |
+          echo ${{ secrets.GITHUB_TOKEN }}
       - name: Assign label
         if: contains(github.event.issue.title, 'bug')
         run: |
